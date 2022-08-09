@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,11 +15,30 @@ header {
   text-align: center;
 }
 
+input {
+  padding: 8px;
+  background: hsl(189, 41%, 97%);
+  border: none;
+  border-radius: 4px;
+}
+
+span {
+  font-size: 10px;
+  color: hsl(186, 14%, 43%);
+}
+
+label {
+  display: block;
+  color: hsl(186, 14%, 43%);
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .calculator-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
-  max-width: 50rem;
+  max-width: 40rem;
 }
 
 .calculator-container {
@@ -29,32 +50,40 @@ header {
 .result {
   font-size: 14px;
   color: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   background-color: hsl(183, 100%, 15%);
 }
+
+.form {
+  display: grid;
+  grid-template-rows: 3fr;
+  gap: 2.5rem;
+}
+
 .input-form {
-  padding-right: 25px;
+  padding: 10px 30px 0px 10px;
 }
 
-.tip-amount {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-span {
-  color: hsl(186, 14%, 43%);
-}
-
+.tip-amount,
 .total {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.total {
   margin-bottom: 5rem;
 }
 
+.total > p,
+.tip-amount > p {
+  font-size: 12px;
+}
+
 .display {
-  font-size: 30px;
+  font-size: 33px;
   font-weight: 700;
   color: hsl(172, 67%, 45%);
 }
@@ -62,8 +91,54 @@ span {
 .reset-button {
   border: none;
   border-radius: 2px;
-  padding: 5px;
+  padding: 8px;
   width: 100%;
   color: hsl(186, 14%, 43%);
   background-color: #0d686d;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tip-button-5 {
+  padding: 6px 31px;
+}
+
+.tip-button {
+  padding: 6px 27px;
+}
+
+.tip-button-5,
+.tip-button {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  background: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 2px;
+  margin-top: 0.6rem;
+}
+
+.custom-tip {
+  width: 5rem;
+  margin-top: 0.6rem;
+}
+
+.custom-tip::placeholder {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: hsl(186, 14%, 43%);
+}
+
+.custom-tip::-webkit-outer-spin-button,
+.custom-tip::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bill,
+#number-people {
+  width: 100%;
 }

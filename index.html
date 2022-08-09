@@ -27,22 +27,39 @@
       <section class="calculator-container">
         <article class="input-form">
           <form action="" class="form">
-            <label for="bill">Bill</label><br />
-            <input type="number" name="bill" required />
-            <p class="select-tip">Select Tip %</p>
-            <input class="tip-button" type="button" value="5%" />
-            <input class="tip-button" type="button" value="10%" />
-            <input class="tip-button" type="button" value="15%" />
-            <input class="tip-button" type="button" value="25%" />
-            <input class="tip-button" type="button" value="50%" />
-            <input type="number" name="custom" id="custom-tip" /><br />
-            <label for="number-people">Number of People</label>
-            <br />
-            <input type="number" name="number-people" id="number-people" />
+            <div class="form-group">
+              <label for="bill">Bill</label>
+              <input type="number" name="bill" class="bill" required />
+            </div>
+            <div class="form-group">
+              <label class="select-tip">Select Tip %</label>
+              <input class="tip-button-5" type="button" value="5%" />
+              <input class="tip-button" type="button" value="10%" />
+              <input class="tip-button" type="button" value="15%" />
+              <input class="tip-button" type="button" value="25%" />
+              <input class="tip-button" type="button" value="50%" />
+              <input
+                type="number"
+                name="custom"
+                class="custom-tip"
+                placeholder="Costum"
+              />
+            </div>
+            <div class="form-group">
+              <label for="number-people" class="number-people-label"
+                >Number of People</label
+              >
+              <input
+                type="number"
+                name="number-people"
+                id="number-people"
+                required
+              />
+            </div>
           </form>
         </article>
         <article class="result">
-          <form action="">
+          <form action="" class="amount-form">
             <div class="tip-amount">
               <p>Tip Amount <br /><span>/ person</span></p>
               <span class="display">$0.00</span>
