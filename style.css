@@ -99,12 +99,26 @@ label {
   font-weight: bold;
 }
 
+.reset-button:hover,
+.reset-button:active {
+  color: hsl(183, 100%, 15%);
+  background: hsl(172, 67%, 45%);
+}
+
 .tip-button-5 {
   padding: 6px 31px;
 }
 
 .tip-button {
   padding: 6px 27px;
+}
+
+.tip-button:hover,
+.tip-button:active,
+.tip-button-5:hover,
+.tip-button-5:active {
+  color: hsl(183, 100%, 15%);
+  background: hsl(172, 67%, 45%);
 }
 
 .tip-button-5,
@@ -139,6 +153,18 @@ label {
 }
 
 .bill,
-#number-people {
+.number-people {
   width: 100%;
+}
+
+.bill::-webkit-outer-spin-button,
+.bill::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-people::-webkit-outer-spin-button,
+.number-people::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
