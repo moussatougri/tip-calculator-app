@@ -28,7 +28,7 @@ header {
 
 input {
   padding: 8px;
-  background: hsl(189, 41%, 97%);
+  background: hsl(180, 29%, 92%);
   border: none;
   border-radius: 4px;
 }
@@ -199,4 +199,119 @@ input[type="radio"]:checked + .lbl-radio {
   top: 5px;
   right: 0;
   font-weight: 400;
+}
+
+/* mobil version 375px - 590px */
+
+@media only screen and (max-width: 590px) {
+  header {
+    margin-top: 3rem;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    color: hsl(183, 100%, 15%);
+    letter-spacing: 0.6em;
+  }
+  main {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    padding: 15px;
+    background: hsl(180, 29%, 92%);
+    border: none;
+    border-radius: 4px;
+  }
+  label {
+    display: inline-block;
+    color: hsl(186, 14%, 43%);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .input-form {
+    padding: 20px 15px 0px 15px;
+  }
+
+  .calculator-container {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .lbl-radio {
+    text-align: center;
+    padding: 10px 27px;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .custom-tip {
+    border-radius: 4px;
+    width: 100%;
+    padding: 5px;
+  }
+
+  input[type="radio"]:checked + .lbl-radio {
+    background-color: hsl(173, 55%, 72%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  input[type="radio"]:checked + .lbl-radio {
+    background-color: hsl(173, 55%, 72%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  .number-group {
+    position: relative;
+  }
+
+  .bill-group {
+    position: relative;
+  }
+
+  .valid-label {
+    position: absolute;
+    color: #ff0000;
+    top: 2px;
+    right: 0;
+    font-weight: 400;
+  }
+
+  .bill-label {
+    position: absolute;
+    color: #ff0000;
+    top: 2px;
+    right: 0;
+    font-weight: 400;
+  }
+
+  .total {
+    margin-bottom: 1.5rem;
+  }
+
+  .reset-button {
+    border: none;
+    border-radius: 4px;
+    padding: 13px;
+    width: 100%;
+    color: hsl(186, 14%, 43%);
+    background-color: #0d686d;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
