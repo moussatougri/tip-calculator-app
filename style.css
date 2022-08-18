@@ -39,7 +39,7 @@ span {
 }
 
 label {
-  display: block;
+  display: inline-block;
   color: hsl(186, 14%, 43%);
   font-size: 12px;
   font-weight: 700;
@@ -168,4 +168,28 @@ label {
 input[type="radio"]:checked + .lbl-radio {
   background-color: hsl(173, 55%, 72%);
   color: hsl(183, 100%, 15%);
+}
+
+.number-group {
+  position: relative;
+}
+
+.bill-group {
+  position: relative;
+}
+
+.valid-label {
+  position: absolute;
+  color: #ff0000;
+  top: 5px;
+  right: 0;
+  font-weight: 400;
+}
+
+.bill-label {
+  position: absolute;
+  color: #ff0000;
+  top: 5px;
+  right: 0;
+  font-weight: 400;
 }
