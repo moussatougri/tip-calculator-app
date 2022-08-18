@@ -4,6 +4,8 @@ const numberOfPeopleInp = document.querySelector(".numberPeople");
 const billInp = document.querySelector(".bill");
 const numberGroup = document.querySelector(".number-group");
 const billGroup = document.querySelector(".bill-group");
+const customTips = document.querySelector(".custom-tip");
+const radios = document.getElementsByName("tipButton");
 
 //state
 const state = {
@@ -32,17 +34,27 @@ tipForm.addEventListener("keyup", function (event) {
       billGroup.insertBefore(billLabel, billGroup.children[1]);
     } else {
       event.preventDefault();
-      billInp;
-      var radios = document.getElementsByName("tipButton");
-      for (let i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-          state.datas.push({
-            bill: billInp.value,
-            tip: radios[i].value,
-            numberPeople: numberOfPeopleInp.value,
-          });
-          break;
+      // check if radio button checked
+      if (customTips.value <= 0) {
+        for (let i = 0, length = radios.length; i < length; i++) {
+          if (radios[i].checked) {
+            state.datas.push({
+              bill: billInp.value,
+              tip: radios[i].value,
+              customTip: customTips.value,
+              numberPeople: numberOfPeopleInp.value,
+            });
+            console.log(state.datas);
+          }
         }
+      } else {
+        state.datas.push({
+          bill: billInp.value,
+          tip: "",
+          customTip: customTips.value,
+          numberPeople: numberOfPeopleInp.value,
+        });
+        console.log(state.datas);
       }
 
       calculateData();
@@ -51,13 +63,13 @@ tipForm.addEventListener("keyup", function (event) {
 
 //Calculate data
 const calculateData = () => {
-  console.log(state.datas);
   state.datas.forEach(function (data) {
     //convert string in to number
     const convertBill = parseFloat(data.bill).toFixed(2);
     const convertNumberOfPeople = parseInt(data.numberPeople);
     const convertTip = parseFloat(data.tip).toFixed(2);
-    const convertCostumTip = parseFloat(data.custom).toFixed(2);
+    const convertCostumTip = parseFloat(data.customTip).toFixed(2);
+    console.log(convertCostumTip);
 
     //calculate Total pro Person
 
@@ -69,11 +81,23 @@ const calculateData = () => {
       convertNumberOfPeople
     ).toFixed(2);
 
-    console.log(convertBill * convertTip);
-
-    //update display Tip Amount
+    //calculate custon tip pro Person
+    const tipAmountCostum = (
+      (convertBill * convertCostumTip) /
+      100 /
+      convertNumberOfPeople
+    ).toFixed(2);
     const displayTipAmount = document.querySelector(".display-amount");
-    displayTipAmount.innerText = `$${tipAmount}`;
+
+    //custom tip is preferred here
+    if (customTips.value > "0") {
+      //update display Tip Amount
+      displayTipAmount.innerText = `$${tipAmountCostum}`;
+    } else {
+      //update display Tip Amount
+
+      displayTipAmount.innerText = `$${tipAmount}`;
+    }
 
     //update display Total Person
     const displayTotal = document.querySelector(".display-total");
