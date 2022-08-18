@@ -109,6 +109,12 @@ label {
   background-color: #0d686d;
   font-size: 12px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.reset-button:active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
 }
 
 .custom-tip {
