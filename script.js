@@ -6,6 +6,9 @@ const numberGroup = document.querySelector(".number-group");
 const billGroup = document.querySelector(".bill-group");
 const customTips = document.querySelector(".custom-tip");
 const radios = document.getElementsByName("tipButton");
+const displayTotal = document.querySelector(".display-total");
+const displayTipAmount = document.querySelector(".display-amount");
+const resetBtn = document.querySelector(".reset-button");
 
 //state
 const state = {
@@ -69,7 +72,6 @@ const calculateData = () => {
     const convertNumberOfPeople = parseInt(data.numberPeople);
     const convertTip = parseFloat(data.tip).toFixed(2);
     const convertCostumTip = parseFloat(data.customTip).toFixed(2);
-    console.log(convertCostumTip);
 
     //calculate Total pro Person
 
@@ -87,7 +89,6 @@ const calculateData = () => {
       100 /
       convertNumberOfPeople
     ).toFixed(2);
-    const displayTipAmount = document.querySelector(".display-amount");
 
     //custom tip is preferred here
     if (customTips.value > "0") {
@@ -100,7 +101,16 @@ const calculateData = () => {
     }
 
     //update display Total Person
-    const displayTotal = document.querySelector(".display-total");
     displayTotal.innerText = `$${totalPerson}`;
   });
 };
+
+//reset all Values
+const resetValue = () => {
+  //selector
+  tipForm.reset();
+  displayTipAmount.innerHTML = "$0.00";
+  displayTotal.innerHTML = "$0.00";
+};
+
+resetBtn.addEventListener("click", resetValue);
