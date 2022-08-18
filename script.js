@@ -32,11 +32,19 @@ tipForm.addEventListener("keyup", function (event) {
       billGroup.insertBefore(billLabel, billGroup.children[1]);
     } else {
       event.preventDefault();
-      const array = Array.from(tipForm).reduce(
-        (acc, input) => ({ ...acc, [input.name]: input.value }),
-        {}
-      );
-      state.datas.push(array);
+      billInp;
+      var radios = document.getElementsByName("tipButton");
+      for (let i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          state.datas.push({
+            bill: billInp.value,
+            tip: radios[i].value,
+            numberPeople: numberOfPeopleInp.value,
+          });
+          break;
+        }
+      }
+
       calculateData();
     }
 });
@@ -48,14 +56,24 @@ const calculateData = () => {
     //convert string in to number
     const convertBill = parseFloat(data.bill).toFixed(2);
     const convertNumberOfPeople = parseInt(data.numberPeople);
-    const convertTip = parseFloat(data.tipButton).toFixed(2);
+    const convertTip = parseFloat(data.tip).toFixed(2);
     const convertCostumTip = parseFloat(data.custom).toFixed(2);
 
     //calculate Total pro Person
-    console.log(convertBill);
-    console.log(convertNumberOfPeople);
+
     const totalPerson = (convertBill / convertNumberOfPeople).toFixed(2);
-    console.log(totalPerson);
+
+    //calculate tip pro Person
+    const tipAmount = (
+      (convertBill * convertTip) /
+      convertNumberOfPeople
+    ).toFixed(2);
+
+    console.log(convertBill * convertTip);
+
+    //update display Tip Amount
+    const displayTipAmount = document.querySelector(".display-amount");
+    displayTipAmount.innerText = `$${tipAmount}`;
 
     //update display Total Person
     const displayTotal = document.querySelector(".display-total");
