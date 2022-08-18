@@ -1,13 +1,13 @@
 //selektoren
 const tipForm = document.querySelector(".form");
-const numberOfPeopleInp = document.querySelector(".number-people");
+const numberOfPeopleInp = document.querySelector(".numberPeople");
 const billInp = document.querySelector(".bill");
 const numberGroup = document.querySelector(".number-group");
 const billGroup = document.querySelector(".bill-group");
 
 //state
 const state = {
-  items: [],
+  datas: [],
 };
 
 //press enter
@@ -36,8 +36,29 @@ tipForm.addEventListener("keyup", function (event) {
         (acc, input) => ({ ...acc, [input.name]: input.value }),
         {}
       );
-      state.items.push(array);
+      state.datas.push(array);
+      calculateData();
     }
-
-  console.log(state);
 });
+
+//Calculate data
+const calculateData = () => {
+  console.log(state.datas);
+  state.datas.forEach(function (data) {
+    //convert string in to number
+    const convertBill = parseFloat(data.bill).toFixed(2);
+    const convertNumberOfPeople = parseInt(data.numberPeople);
+    const convertTip = parseFloat(data.tipButton).toFixed(2);
+    const convertCostumTip = parseFloat(data.custom).toFixed(2);
+
+    //calculate Total pro Person
+    console.log(convertBill);
+    console.log(convertNumberOfPeople);
+    const totalPerson = (convertBill / convertNumberOfPeople).toFixed(2);
+    console.log(totalPerson);
+
+    //update display Total Person
+    const displayTotal = document.querySelector(".display-total");
+    displayTotal.innerText = `$${totalPerson}`;
+  });
+};
