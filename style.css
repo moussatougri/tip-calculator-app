@@ -46,16 +46,13 @@ label {
 }
 
 .calculator-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  max-width: 40rem;
-}
-
-.calculator-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-columns: 50% 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  width: 40rem;
 }
 
 .result {
@@ -98,6 +95,9 @@ label {
   font-weight: 700;
   color: hsl(172, 67%, 45%);
 }
+.select-tip {
+  margin-bottom: 10px;
+}
 
 .reset-button {
   border: none;
@@ -110,43 +110,8 @@ label {
   font-weight: bold;
 }
 
-.reset-button:hover,
-.reset-button:active {
-  color: hsl(183, 100%, 15%);
-  background: hsl(172, 67%, 45%);
-}
-
-.tip-button-5 {
-  padding: 6px 31px;
-}
-
-.tip-button {
-  padding: 6px 27px;
-}
-
-.tip-button:hover,
-.tip-button:active,
-.tip-button-5:hover,
-.tip-button-5:active {
-  color: hsl(183, 100%, 15%);
-  background: hsl(172, 67%, 45%);
-}
-
-.tip-button-5,
-.tip-button {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  text-align: center;
-  color: white;
-  background: hsl(183, 100%, 15%);
-  border: none;
-  border-radius: 2px;
-  margin-top: 0.6rem;
-}
-
 .custom-tip {
   width: 5rem;
-  margin-top: 0.6rem;
 }
 
 .custom-tip::placeholder {
@@ -178,4 +143,29 @@ label {
 .number-people::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.hidebx {
+  display: none;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.lbl-radio {
+  text-align: center;
+  padding: 5px 27px;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + .lbl-radio {
+  background-color: hsl(173, 55%, 72%);
+  color: hsl(183, 100%, 15%);
 }

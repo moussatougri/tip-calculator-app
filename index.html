@@ -27,25 +27,59 @@
       <section class="calculator-container">
         <article class="input-form">
           <form action="" class="form">
-            <div class="form-group">
+            <div class="bill-group">
               <label for="bill">Bill</label>
               <input type="number" name="bill" class="bill" required />
             </div>
-            <div class="form-group">
-              <label class="select-tip">Select Tip %</label>
-              <input class="tip-button-5" type="button" value="5%" />
-              <input class="tip-button" type="button" value="10%" />
-              <input class="tip-button" type="button" value="15%" />
-              <input class="tip-button" type="button" value="25%" />
-              <input class="tip-button" type="button" value="50%" />
-              <input
-                type="number"
-                name="custom"
-                class="custom-tip"
-                placeholder="Costum"
-              />
+
+            <div>
+              <label for="form-group" class="select-tip">Select Tip %</label>
+              <div class="form-group">
+                <!--5% tip-->
+                <input type="radio" name="tip-button" id="1" class="hidebx" />
+                <label for="1" class="lbl-radio">
+                  <div class="display-box">
+                    <div class="tip">5%</div>
+                  </div>
+                </label>
+                <!--10% tip-->
+                <input type="radio" name="tip-button" id="2" class="hidebx" />
+                <label for="2" class="lbl-radio">
+                  <div class="display-box">
+                    <div class="tip">10%</div>
+                  </div>
+                </label>
+                <!--15% tip-->
+                <input type="radio" name="tip-button" id="3" class="hidebx" />
+                <label for="3" class="lbl-radio">
+                  <div class="display-box">
+                    <div class="tip">15%</div>
+                  </div>
+                </label>
+                <!--25% tip-->
+                <input type="radio" name="tip-button" id="4" class="hidebx" />
+                <label for="4" class="lbl-radio">
+                  <div class="display-box">
+                    <div class="tip">25%</div>
+                  </div>
+                </label>
+                <!--50% tip-->
+                <input type="radio" name="tip-button" id="5" class="hidebx" />
+                <label for="5" class="lbl-radio">
+                  <div class="display-box">
+                    <div class="tip">50%</div>
+                  </div>
+                </label>
+                <input
+                  type="number"
+                  name="custom"
+                  class="custom-tip"
+                  placeholder="Costum"
+                />
+              </div>
             </div>
-            <div class="form-group">
+
+            <div class="number-group">
               <label for="number-people" class="number-people-label"
                 >Number of People</label
               >
